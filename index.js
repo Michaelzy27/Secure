@@ -1,10 +1,8 @@
 //import Web3 from 'web3';
 
-//document.getElementById("send").addEventListener("click", connectWallet);
-
-function send() {
-    document.getElementById("walletaddress").value = "00x"
-}
+// function send() {
+//     document.getElementById("walletaddress").value = "00x"
+// }
 
 document.getElementById("connect").addEventListener("click", connectWallet);
 
@@ -45,19 +43,19 @@ async function connectWallet() {
         }
 }
 
-async function transfer() {
+// async function transfer() {
 
-    if(contract == null) {
-        console.error("Contract does not exist!");
-        return;
-    }
+//     if(contract == null) {
+//         console.error("Contract does not exist!");
+//         return;
+//     }
 
-    const address = document.getElementById("walletaddress").value;
-    const amount =  document.getElementById("walletamount").value;
+//     const address = document.getElementById("walletaddress").value;
+//     const amount =  document.getElementById("walletamount").value;
 
-    await contract.methods.transfer(address, amount).send({from: account});
+//     await contract.methods.transfer(address, amount).send({from: account});
 
-}
+// }
 
 async function getUserBalance() {
 

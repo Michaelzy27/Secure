@@ -1,6 +1,6 @@
 //import Web3 from 'web3';
 
-document.getElementById("send").addEventListener("click", connectWallet);
+//document.getElementById("send").addEventListener("click", connectWallet);
 
 function send() {
     document.getElementById("walletaddress").value = "00x"

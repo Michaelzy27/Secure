@@ -73,7 +73,7 @@ async function getUserBalance() {
 
 async function mintTokens() {
 
-    const _toAddress = document.getElementById("proposalamount").value;
+    const _toAddress = document.getElementById("recipientaddress").value;
 
     let params = [
         {

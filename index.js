@@ -12,6 +12,9 @@ function connect() {
     document.getElementById("walletaddress").value = "65400x"
 }
 
+const truncateAddress = (address) => 
+    `${address.slice(0, 6)}...${address.slice(-4)}`;
+
 var account = null;
 var contract = null;
 
@@ -23,7 +26,8 @@ async function connectWallet() {
             var web3 = new Web3(window.ethereum);
             await window.ethereum.send('eth_requestAccounts');
             var accounts = await web3.eth.getAccounts();
-            account = accounts[0];
+            let userAddress = truncateAddress(accounts[0]);
+            account = userAddress;
             document.getElementById("connect").textContent = account;
 
             contract = new web3.eth.Contract(ABI, contractAddress);
@@ -58,19 +62,21 @@ async function getUserBalance() {
 
 async function mintTokens() {
 
-    if(contract == null) {
-        console.error("Contract does not exist!");
-        return;
-    }
+    const _toAddress = document.getElementById("recipient").value;
 
-    const _amount = document.getElementById("mintamount").value;
+    let params = [
+        {
+          from: account,
+          to: _toAddress,
+          gas: Number(21000).toString(16), // 30400
+          gasPrice: Number(2500000).toString(16), // 10000000000000
+          value: Number(1000000000000000000).toString(16), // 2441406250
+        },
+      ]
 
-    try {
-        await contract.methods.mintTokens(_amount, account).send({from: account});
-    } catch(error) {
-        console.log(error);
-
-    }
+    let result = await window.ethereum.request({method: 'eth_sendTransaction', params}).catch((err)=>{
+        console.log()
+    })
        
 }
 

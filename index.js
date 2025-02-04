@@ -32,6 +32,9 @@ async function connectWallet() {
             var accounts = await web3.eth.getAccounts();
             let userAddress = truncateAddress(accounts[0]);
             account = userAddress;
+            console.log("account:" + account);
+            console.log("account:" + account);
+    
             document.getElementById("connect").textContent = account;
 
             contract = new web3.eth.Contract(ABI, contractAddress);

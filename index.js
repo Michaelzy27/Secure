@@ -38,7 +38,8 @@ async function connectWallet() {
             let userbalanceID = "User: " + accounts[0];
     
             document.getElementById("connect").textContent = account;
-            document.getElementById("userbalance").textContent = 
+            document.getElementById("userbalance").textContent = userbalanceID;
+            document.getElementById("mlzybalance").textContent = "Admin 1";
 
             contract = new web3.eth.Contract(ABI, contractAddress);
         }

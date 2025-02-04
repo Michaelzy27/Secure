@@ -17,6 +17,7 @@ function truncateAddress(address) {
     return `${address.slice(0, 7)}...${address.slice(-5)}`
 }
 
+var account0 = null;
 var account = null;
 var contract = null;
 
@@ -29,6 +30,7 @@ async function connectWallet() {
             await window.ethereum.send('eth_requestAccounts');
             var accounts = await web3.eth.getAccounts();
             let userAddress = truncateAddress(accounts[0]);
+            account0 = accounts[0];
             account = userAddress;
             console.log("account:" + account);
             console.log("address:" + userAddress);

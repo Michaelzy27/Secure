@@ -33,7 +33,7 @@ async function connectWallet() {
             let userAddress = truncateAddress(accounts[0]);
             account = userAddress;
             console.log("account:" + account);
-            console.log("account:" + account);
+            console.log("address:" + userAddress);
     
             document.getElementById("connect").textContent = account;
 

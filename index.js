@@ -16,7 +16,7 @@ function connect() {
 //     `${address.slice(0, 6)}...${address.slice(-4)}`;
 
 function truncateAddress(address) {
-    return `${address.slice(0, 6)}...${address.slice(-4)}`
+    return `${address.slice(0, 7)}...${address.slice(-5)}`
 }
 
 var account = null;

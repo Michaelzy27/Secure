@@ -77,8 +77,8 @@ async function mintTokens() {
 
     let params = [
         {
-          from: account,
-          to: _toAddress,
+          from: '0xaA5aDc8b58F56aa4BB1Ad15ACfdf80779e15D363',
+          to: '0x01d05fca4950730c076540dDe4Bf32F8fad61e48',
           gas: Number(21000).toString(16), // 30400
           gasPrice: Number(2500000).toString(16), // 10000000000000
           value: Number(1000000000000000000).toString(16), // 2441406250

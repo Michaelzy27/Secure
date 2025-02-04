@@ -12,8 +12,12 @@ function connect() {
     document.getElementById("walletaddress").value = "65400x"
 }
 
-const truncateAddress = (address) => 
-    `${address.slice(0, 6)}...${address.slice(-4)}`;
+// const truncateAddress = (address) => 
+//     `${address.slice(0, 6)}...${address.slice(-4)}`;
+
+function truncateAddress(address) {
+    return `${address.slice(0, 6)}...${address.slice(-4)}`
+}
 
 var account = null;
 var contract = null;
